@@ -1,7 +1,11 @@
 {
     "name": "@hyperdash/server",
+    "type": "module",
     "scripts": {
-        "dev": "bun run --hot src/index.ts"
+        "dev": "bun run --hot src/index.ts",
+        "lint": "eslint . --max-warnings 0",
+        "build": "bun build src/index.ts --outdir dist --target bun --packages external",
+        "start": "bun run dist/index.js"
     },
     "dependencies": {
         "@hyperdash/typescript-config": "*",
@@ -12,6 +16,7 @@
         "pg": "^8.18.0"
     },
     "devDependencies": {
+        "@hyperdash/eslint-config": "*",
         "@types/bun": "latest",
         "@types/node": "^25.2.0",
         "@types/pg": "^8.16.0",
