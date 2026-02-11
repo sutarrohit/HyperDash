@@ -1,12 +1,12 @@
 {
-    "extends": "@hyperdash/typescript-config/base.json",
+  "extends": "@hyperdash/typescript-config/base.json",
 
-    "compilerOptions": {
-        "rootDir": "src",
-        "outDir": "dist",
-        "types": ["node"]
-    },
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "types": ["bun", "node"]
+  },
 
-    "include": ["src"],
-    "exclude": ["node_modules", "dist"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
