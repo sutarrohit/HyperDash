@@ -4,27 +4,17 @@ import path from "node:path";
 import { z } from "zod";
 
 expand(
-  config({
-    path: path.resolve(
-      process.cwd(),
-      process.env.NODE_ENV === "test" ? ".env.test" : ".env",
-    ),
-  }),
+    config({
+        path: path.resolve(process.cwd(), process.env.NODE_ENV === "test" ? ".env.test" : ".env")
+    })
 );
 
 const EnvSchema = z.object({
-  NODE_ENV: z.string().default("development"),
-  PORT: z.coerce.number().default(9999),
-  LOG_LEVEL: z.enum([
-    "fatal",
-    "error",
-    "warn",
-    "info",
-    "debug",
-    "trace",
-    "silent",
-  ]),
-  DATABASE_URL: z.url(),
+    NODE_ENV: z.string().default("development"),
+    PORT: z.coerce.number().default(4000),
+    LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
+    DATABASE_URL: z.url(),
+    DIRECT_URL: z.url()
 });
 
 export type env = z.infer<typeof EnvSchema>;
@@ -32,9 +22,9 @@ export type env = z.infer<typeof EnvSchema>;
 const { data: env, error } = EnvSchema.safeParse(process.env);
 
 if (error) {
-  console.error("❌ Invalid env:");
-  console.error(JSON.stringify(z.flattenError(error).fieldErrors, null, 2));
-  process.exit(1);
+    console.error("❌ Invalid env | Missing env:");
+    console.error(JSON.stringify(z.flattenError(error).fieldErrors, null, 2));
+    process.exit(1);
 }
 
 export default env!;

@@ -1,7 +1,8 @@
 import app from "./app.js";
+import env from "../env.js";
 
 export type AppType = typeof app;
 export default {
-    port: 4000,
+    port: env.PORT,
     fetch: app.fetch
 };
