@@ -1,10 +1,11 @@
 import { hc } from "hono/client";
-import type { AppType } from "../../../packages/server/src/index";
+import type { AppType } from "../../../packages/server/src/app";
 
-const baseServerUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:4000/";
+const baseServerUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:4000/";
 
 export const client = hc<AppType>(baseServerUrl, {
-    init: {
-        credentials: "include"
-    }
+  init: {
+    credentials: "include",
+  },
 });
