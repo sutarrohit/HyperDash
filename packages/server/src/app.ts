@@ -3,7 +3,7 @@ import { configureOpenAPI } from "@/lib/configure-open-api.js";
 import index from "@/routes/index.route.js";
 
 const app = createApp();
-const routes = [index];
+const routes = [index] as const;
 
 configureOpenAPI(app);
 
