@@ -7,13 +7,12 @@ export function configureOpenAPI(app: AppOpenAPI) {
         openapi: "3.0.0",
         info: {
             version: packageJSON.version,
-            title: "Hyperdash API"
+            title: "velox API"
         }
     });
 
     app.get(
         "/scalar",
-
         Scalar({ url: "/doc", theme: "kepler" })
     );
 }
