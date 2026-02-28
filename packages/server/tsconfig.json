@@ -1,5 +1,5 @@
 {
-    "extends": "@hyperdash/typescript-config/base.json",
+    "extends": "@velox/typescript-config/base.json",
 
     "compilerOptions": {
         "rootDir": "./",
@@ -7,7 +7,6 @@
 
         "baseUrl": ".",
         "paths": {
-            // ✅ MUST be here
             "@/*": ["./src/*"]
         },
 

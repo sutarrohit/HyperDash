@@ -12,6 +12,7 @@ expand(
 const EnvSchema = z.object({
     NODE_ENV: z.string().default("development"),
     PORT: z.coerce.number().default(4000),
+    FINNHUB_API_KEY: z.string(),
     LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]),
     DATABASE_URL: z.url(),
     DIRECT_URL: z.url()

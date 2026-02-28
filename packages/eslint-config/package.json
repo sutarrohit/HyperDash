@@ -1,5 +1,5 @@
 {
-    "name": "@hyperdash/eslint-config",
+    "name": "@velox/eslint-config",
     "version": "0.0.0",
     "type": "module",
     "private": true,
